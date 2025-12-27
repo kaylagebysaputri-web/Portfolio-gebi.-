@@ -1,0 +1,162 @@
+/* RUMUS DASAR CSS: Box Model Adjustment */
+*, *::before, *::after {
+    box-sizing: border-box; /* Membuat lebar dan tinggi mencakup padding & border */
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Variabel Warna */
+    --primary-color: #7B68EE; /* Biru Primer */
+    --secondary-color: #6c757d; /* Abu-abu Sekunder */
+    --text-color: #E0FFFF;
+    --bg-light: #87CEEB;
+    --bg-dark: #212529;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: (--text-color) ;
+    background-color: #87CEEB;
+}
+
+/* ------------------ NAVIGATION & HEADER ------------------ */
+
+header {
+    display: flex; /* RUMUS 3A: Flexbox untuk header */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--bg-dark);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Navigasi Desktop */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Tombol Menu Seluler (Default disembunyikan di desktop) */
+.nav-toggle {
+    display: none;
+}
+
+/* ------------------ SECTIONS & LAYOUT ------------------ */
+
+section {
+    padding: 60px 5%; /* Padding Vertikal & Horizontal */
+    min-height: 80vh; /* Membuat tinggi minimal */
+}
+
+/* HERO Section */
+.hero {
+    background-color: var(--bg-light);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PROJECT Card Layout (Contoh Grid) */
+.projects {
+    background-color: #87CEEB;
+}
+.projects h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.project-card {
+    /* RUMUS 3B: Grid untuk layout multi-kolom di desktop */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+}
+.project-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Tombol */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ------------------ MOBILE RESPONSIVENESS (RUMUS 2) ------------------ */
+
+@media (max-width: 768px) {
+    
+    /* Tampilkan tombol toggle di seluler */
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5em;
+    }
+
+    /* Sembunyikan navigasi default, atur posisi absolut untuk menu seluler */
+    nav ul {
+        display: none; /* Default disembunyikan */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Di bawah header */
+        left: 0;
+        background-color: var(--bg-dark);
+        text-align: center;
+    }
+    
+    /* Kelas yang ditambahkan oleh JavaScript untuk menampilkan menu */
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        border-bottom: 1px solid #333;
+    }
+}
+.foto-profil {
+  width: 200px;         /* Ukuran lebar */
+  height: 200px;        /* Ukuran tinggi */
+  border-radius: 50%;   /* Ini rahasia biar fotonya bulat sempurna */
+  object-fit: cover;    /* Biar fotonya nggak lonjong/gepeng */
+  border: 4px solid #4D8AB9; /* Kasih bingkai putih biar elegan */
+  display: block;
+  margin: 20px auto;    /* Biar fotonya otomatis di tengah */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Kasih bayangan halus */
+}
+
