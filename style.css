@@ -5,20 +5,23 @@
     padding: 0;
 }
 
-:root {
-    /* Variabel Warna */
-    --primary-color: #7B68EE; /* Biru Primer */
-    --secondary-color: #6c757d; /* Abu-abu Sekunder */
-    --text-color: #E0FFFF;
-    --bg-light: #87CEEB;
-    --bg-dark: #212529;
+::root {
+  /* Gradasi Biru seperti contoh temanmu tapi versi Biru */
+  --bg-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --primary-color: #0083b0;
+  --text-color: #ffffff;
+  --secondary-bg: rgba(255, 255, 255, 0.1);
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: (--text-color) ;
-    background-color: #87CEEB;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  /* Ini kode gradasi birunya */
+  background: linear-gradient(135deg, #243b55 0%, #87CEEB 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #333; /* Warna tulisan agar tetap terbaca jelas */
 }
 
 /* ------------------ NAVIGATION & HEADER ------------------ */
@@ -77,9 +80,12 @@ section {
 
 /* PROJECT Card Layout (Contoh Grid) */
 .projects {
-    background-color: #87CEEB;
+    background-color: transparent; /* Ini kuncinya supaya nyatu */
+    padding: 60px 20px;
 }
-.projects h2 {
+
+
+projects h2 {
     text-align: center;
     margin-bottom: 40px;
 }
@@ -158,5 +164,18 @@ section {
   display: block;
   margin: 20px auto;    /* Biar fotonya otomatis di tengah */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Kasih bayangan halus */
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #879; /* Warna Instagram */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 10px 5px;
+}
+
+.btn:last-child {
+  background-color: #877; /* Warna WhatsApp */
 }
 
