@@ -20,7 +20,37 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
   color: #E0FFFF; /* Warna tulisan agar tetap terbaca jelas */
+  
+.fact-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px dashed rgba(255, 255, 255, 0.5); /* Garis putus-putus biar lucu */
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    max-width: 80%;
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Supaya rapi kalau dibuka di HP */
+    margin-top: 20px;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.15); /* Efek kaca transparan */
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 
 /* ------------------ NAVIGATION & HEADER ------------------ */
 
@@ -227,7 +257,6 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    /* Menjalankan animasi bernama 'glowText' selama 5 detik secara berulang */
     animation: glowText 5s ease infinite;
     
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
@@ -237,60 +266,4 @@ header {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-}
-
-.skills {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.skills-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap; /* Supaya rapi kalau dibuka di HP */
-    margin-top: 20px;
-}
-
-.skill-item {
-    background: rgba(255, 255, 255, 0.15); /* Efek kaca transparan */
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.social-icon {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.social-icon {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.social-icon:hover {
-    background: #5865F2; /* Warna khas Discord */
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
 }
